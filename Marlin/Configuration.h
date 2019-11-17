@@ -604,10 +604,12 @@
 // Specify here all the endstop connectors that are connected to any endstop or probe.
 // Almost all printers will be using one per axis. Probes will use one or more of the
 // extra connectors. Leave undefined any used for non-endstop and non-probe purposes.
+// michael@5dot1.de: XMIN and YMIN are used by the DIAG1 pins of the TMC2130 for sensorless homing
 #define USE_XMIN_PLUG
 #define USE_YMIN_PLUG
 #define USE_ZMIN_PLUG
-//#define USE_XMAX_PLUG
+// michael@5dot1.de: XMAX_PLUG is used by Z2 endstop
+#define USE_XMAX_PLUG
 //#define USE_YMAX_PLUG
 //#define USE_ZMAX_PLUG
 
