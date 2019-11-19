@@ -133,6 +133,22 @@
   #define MOTHERBOARD BOARD_RAMPS_14_EFB
 #endif
 
+// michael@5dot1.de: exchange the pins of the LEDs and the fans to better fit the daughter board
+// requires to use #ifndef for the fan pins in the pins_FYSETC_F6_13.h
+// FAN_PIN  <=> RGB_LED_R_PIN
+// FAN1_PIN <=> RGB_LED_G_PIN
+// FAN2_PIN <=> RGB_LED_B_PIN
+//#define SWITCH_FAN_LED
+#ifdef SWITCH_FAN_LED
+#define FAN_PIN            3
+#define FAN1_PIN           4
+#define FAN2_PIN           9
+#define RGB_LED_R_PIN     44
+#define RGB_LED_G_PIN     45
+#define RGB_LED_B_PIN     46
+#define RGB_LED_W_PIN    -1
+#endif
+
 // Name displayed in the LCD "Ready" message and Info menu
 //#define CUSTOM_MACHINE_NAME "3D Printer"
 
