@@ -1335,7 +1335,7 @@
  */
 //#define DEFAULT_AXIS_STEPS_PER_UNIT   { 80, 80, 400, 500 }
 // TODO: verify values
-#define DEFAULT_AXIS_STEPS_PER_UNIT   { 80, 80, 400, 90 }
+#define DEFAULT_AXIS_STEPS_PER_UNIT   { 80, 80, 800, 90 }
 
 /**
  * Enable support for M92. Disable to save at least ~530 bytes of flash.
@@ -2918,7 +2918,7 @@
 //
 // Note: Usually sold with a white PCB.
 //
-#define REPRAP_DISCOUNT_SMART_CONTROLLER
+// #define REPRAP_DISCOUNT_SMART_CONTROLLER
 // TODO: the text display of the Tronxy X5S
 
 //
@@ -3079,7 +3079,7 @@
 // RepRapDiscount FULL GRAPHIC Smart Controller
 // https://reprap.org/wiki/RepRapDiscount_Full_Graphic_Smart_Controller
 //
-// #define REPRAP_DISCOUNT_FULL_GRAPHIC_SMART_CONTROLLER
+#define REPRAP_DISCOUNT_FULL_GRAPHIC_SMART_CONTROLLER
 // TODO: this is the BIGTREETECH-TFT35-V3.0
 
 //
