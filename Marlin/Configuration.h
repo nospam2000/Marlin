@@ -730,7 +730,8 @@
     #define DEFAULT_Kd 114.00
   #endif
 #else
-  #define BANG_MAX 255    // Limit hotend current while in bang-bang mode; 255=full current
+  // nospam2000: reduced for 24V
+  #define BANG_MAX 128    // Limit hotend current while in bang-bang mode; 255=full current
 #endif
 
 /**
@@ -802,7 +803,8 @@
  * When set to any value below 255, enables a form of PWM to the bed that acts like a divider
  * so don't use it unless you are OK with PWM on your bed. (See the comment on enabling PIDTEMPBED)
  */
-#define MAX_BED_POWER 255 // limits duty cycle to bed; 255=full current
+// nospam2000: reduced for 24V
+#define MAX_BED_POWER 110 // limits duty cycle to bed; 255=full current
 
 /**
  * PID Bed Heating
