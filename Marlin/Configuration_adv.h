@@ -2281,7 +2281,7 @@
  * LCD Backlight Timeout
  * Requires a display with a controllable backlight
  */
-#define LCD_BACKLIGHT_TIMEOUT_MINS 20  // (minutes) Timeout before turning off the backlight
+// #define LCD_BACKLIGHT_TIMEOUT_MINS 20  // (minutes) Timeout before turning off the backlight
 
 #if defined(DISPLAY_SLEEP_MINUTES) || defined(LCD_BACKLIGHT_TIMEOUT_MINS)
   #define EDITABLE_DISPLAY_TIMEOUT      // Edit sleep / backlight timeout with M255 S<minutes> and a menu item
