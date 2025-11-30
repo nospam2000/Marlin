@@ -751,8 +751,8 @@
   #define MPC_EDIT_MENU                             // Add MPC editing to the "Advanced Settings" menu. (~1.3K bytes of flash)
   #define MPC_AUTOTUNE_MENU                         // Add MPC auto-tuning to the "Advanced Settings" menu. (~350 bytes of flash)
 
-  #define MPC_MAX 128                                 // (0..255) Current to nozzle while MPC is active.
-  #define MPC_HEATER_POWER { 45.0f }                  // (W) Nominal heat cartridge powers.
+  #define MPC_MAX 255                                 // (0..255) Current to nozzle while MPC is active.
+  #define MPC_HEATER_POWER { 50.0f }                  // (W) Nominal heat cartridge powers.
   //#define MPC_PTC                                   // Hotend power changes with temperature (e.g., PTC heat cartridges).
   #if ENABLED(MPC_PTC)
     #define MPC_HEATER_ALPHA { 0.0028f }              // Temperature coefficient of resistance of the heat cartridges.
@@ -1340,8 +1340,10 @@
  *                                      X, Y, Z [, I [, J [, K...]]], E0 [, E1[, E2...]]
  */
 // #define DEFAULT_AXIS_STEPS_PER_UNIT   { 80, 80, 400, 500 }
-#define DEFAULT_AXIS_STEPS_PER_UNIT   { 80, 80, 400, 90 }
-//TODO: check
+// #define DEFAULT_AXIS_STEPS_PER_UNIT   { 80, 80, 400, 90 } // standard for Tronxy X5S
+// nospam2000: adjust extruder steps per mm based on measured extrusion
+// According to measurement at 2019-02-23 (very coarse!): E should: 102  measured: 96.2 origSetting:90 newValue: 95.625
+#define DEFAULT_AXIS_STEPS_PER_UNIT   { 16*5, 16*5, 16*25, 16*5.625 * (102.0/96.2) }
 
 /**
  * Enable support for M92. Disable to save at least ~530 bytes of flash.
