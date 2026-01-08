@@ -1343,7 +1343,9 @@
 // #define DEFAULT_AXIS_STEPS_PER_UNIT   { 80, 80, 400, 90 } // standard for Tronxy X5S
 // nospam2000: adjust extruder steps per mm based on measured extrusion
 // According to measurement at 2019-02-23 (very coarse!): E should: 102  measured: 96.2 origSetting:90 newValue: 95.625
-#define DEFAULT_AXIS_STEPS_PER_UNIT   { 16*5, 16*5, 16*25, 16*5.625 * (102.0/96.2) }
+// #define DEFAULT_AXIS_STEPS_PER_UNIT   { 16*5, 16*5, 16*25, 16*5.625 * (102.0/96.2) }
+// According to measurement at 2026-01-08 : E should: 90  measured: 80.28 origSetting:90 newValue: 16*5.625 * (90.0/80.28) = 100,87
+#define DEFAULT_AXIS_STEPS_PER_UNIT   { 16*5, 16*5, 16*25, 16*5.625 * (90.0/80.28) }
 
 /**
  * Enable support for M92. Disable to save at least ~530 bytes of flash.
