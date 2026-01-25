@@ -1345,7 +1345,15 @@
 // According to measurement at 2019-02-23 (very coarse!): E should: 102  measured: 96.2 origSetting:90 newValue: 95.625
 // #define DEFAULT_AXIS_STEPS_PER_UNIT   { 16*5, 16*5, 16*25, 16*5.625 * (102.0/96.2) }
 // According to measurement at 2026-01-08 : E should: 90  measured: 80.28 origSetting:90 newValue: 16*5.625 * (90.0/80.28) = 100,87
-#define DEFAULT_AXIS_STEPS_PER_UNIT   { 16*5, 16*5, 16*25, 16*5.625 * (90.0/80.28) }
+//#define DEFAULT_AXIS_STEPS_PER_UNIT   { 16*5, 16*5, 16*25, 16*5.625 * (90.0/80.28) }
+// According to measurement at 2026-01-08 : E should: 80  measured: 140.14-57.68=82.46 origSetting:100.87 newValue: 16*5.625 * (100.87/90.0)/1,03075 = 16*5.625*1.08734201 = 97.861
+//#define DEFAULT_AXIS_STEPS_PER_UNIT   { 16*5, 16*5, 16*25, 16*5.625 * 1.08734201 }
+
+// According to measurement at 2026-01-26 : E should: 80  measured: 151.20-70.65=80.55 => correction factor=80/80.55=0.99317194 origSetting:100.87 newValue: 97.861*0.99317194 = 97.19 = 16*5.625 * 1.08
+// #define DEFAULT_AXIS_STEPS_PER_UNIT   { 16*5, 16*5, 16*25, 16*5.625 * 1.08 }
+
+// According to printing tests at 2026-01-26 : 90 * 1.08 *0.9 = 87.48
+#define DEFAULT_AXIS_STEPS_PER_UNIT   { 16*5, 16*5, 16*25, 16*5.625 * 1.08 * 0.9 }
 
 /**
  * Enable support for M92. Disable to save at least ~530 bytes of flash.
